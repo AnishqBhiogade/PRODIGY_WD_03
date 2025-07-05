@@ -32,5 +32,5 @@ To run the project locally:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/tic-tac-toe-web.git
+   git clone https://github.com/AnishqBhiogade/PRODIGY_WD_03.git
    ```

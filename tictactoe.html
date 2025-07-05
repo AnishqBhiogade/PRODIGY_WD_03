@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="tictactoe.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Landing Page -->
+      <div class="landing-page" id="landingPage">
+        <h1 class="main-title">TIC TAC TOE</h1>
+        <div class="mode-selection">
+          <button class="mode-option" onclick="selectMode('pvp')">
+            Player vs Player
+          </button>
+          <button class="mode-option" onclick="selectMode('ai')">
+            Player vs AI
+          </button>
+        </div>
+      </div>
+
+      <!-- Game Page -->
+      <div class="game-page" id="gamePage">
+        <button class="back-button" onclick="goBack()">← Back to Menu</button>
+        <h2 class="game-title">TIC TAC TOE</h2>
+
+        <!-- Player Names (for PvP mode) -->
+        <div class="player-names" id="playerNames" style="display: none">
+          <div class="name-input-group">
+            <label for="player1Name">Player 1 (X)</label>
+            <input
+              type="text"
+              id="player1Name"
+              class="name-input"
+              placeholder="Enter name"
+              maxlength="15"
+            />
+          </div>
+          <div class="name-input-group">
+            <label for="player2Name">Player 2 (O)</label>
+            <input
+              type="text"
+              id="player2Name"
+              class="name-input"
+              placeholder="Enter name"
+              maxlength="15"
+            />
+          </div>
+        </div>
+
+        <!-- AI Difficulty (for AI mode) -->
+        <div
+          class="difficulty-selector"
+          id="difficultySelector"
+          style="display: none"
+        >
+          <h3>Choose AI Difficulty</h3>
+          <div class="difficulty-options">
+            <button
+              class="difficulty-btn"
+              data-difficulty="easy"
+              onclick="setDifficulty('easy')"
+            >
+              Easy
+            </button>
+            <button
+              class="difficulty-btn"
+              data-difficulty="medium"
+              onclick="setDifficulty('medium')"
+            >
+              Medium
+            </button>
+            <button
+              class="difficulty-btn"
+              data-difficulty="hard"
+              onclick="setDifficulty('hard')"
+            >
+              Hard
+            </button>
+          </div>
+        </div>
+
+        <button class="start-game-btn" id="startGameBtn" onclick="startGame()">
+          Start Game
+        </button>
+
+        <!-- Game Content -->
+        <div class="game-content" id="gameContent" style="display: none">
+          <div class="score-board">
+            <div class="score-item">
+              <div class="score-label" id="player1Label">Player 1</div>
+              <div class="score-value" id="scoreX">0</div>
+            </div>
+            <div class="score-item">
+              <div class="score-label">Draws</div>
+              <div class="score-value" id="scoreDraw">0</div>
+            </div>
+            <div class="score-item">
+              <div class="score-label" id="player2Label">Player 2</div>
+              <div class="score-value" id="scoreO">0</div>
+            </div>
+          </div>
+
+          <div class="game-info">
+            <div class="current-player">
+              Current Turn: <span id="currentPlayer">Player 1</span>
+            </div>
+          </div>
+
+          <div class="game-board" id="gameBoard">
+            <div class="cell" data-index="0" onclick="makeMove(0)"></div>
+            <div class="cell" data-index="1" onclick="makeMove(1)"></div>
+            <div class="cell" data-index="2" onclick="makeMove(2)"></div>
+            <div class="cell" data-index="3" onclick="makeMove(3)"></div>
+            <div class="cell" data-index="4" onclick="makeMove(4)"></div>
+            <div class="cell" data-index="5" onclick="makeMove(5)"></div>
+            <div class="cell" data-index="6" onclick="makeMove(6)"></div>
+            <div class="cell" data-index="7" onclick="makeMove(7)"></div>
+            <div class="cell" data-index="8" onclick="makeMove(8)"></div>
+          </div>
+
+          <div class="game-status" id="gameStatus"></div>
+
+          <div class="controls">
+            <button class="btn" onclick="resetGame()">New Game</button>
+            <button class="btn reset" onclick="resetScore()">
+              Reset Score
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="tictactoe.js"></script>
+  </body>
+</html>
